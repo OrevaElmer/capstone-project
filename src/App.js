@@ -1,10 +1,27 @@
-import './App.css';
+import Home from './pages/home/Home';
+import Team from "./pages/team/Team"
+import Login from "./pages/login/Login"
+import Product from "./pages/product/Product"
+import Client from "./pages/client/Client"
+
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  } from "react-router-dom"
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello React</h1>
-      <p>Please, JEhovah let it work fine.</p>
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<Home />}/>
+          <Route path='login' element={<Login />} />
+          <Route path='team' element={<Team />} />
+          <Route path='Product' element={<Product />} />
+          <Route path='client' element={<Client />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
